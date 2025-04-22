@@ -28,18 +28,22 @@ pip install -r requirements.txt
 
 ## Make sure the structure is like this
 ```wildfire_dataset/
-├── Train/
-│   ├── wildfire/
-│   └── nowildfire/
-├── Validation/
-│   ├── wildfire/
-│   └── nowildfire/
-└── Test/
-|   ├── wildfire/
-|   └── nowildfire/
-|
+📁 wildfire_detection_model
+├── 📁 wildfire_dataset
+│   ├── 📁 Test
+│   │   ├── 📁 nowildfire
+│   │   └── 📁 wildfire
+│   ├── 📁 Train
+│   │   ├── 📁 nowildfire
+│   │   └── 📁 wildfire
+│   └── 📁 Validation
+│       ├── 📁 nowildfire
+│       └── 📁 wildfire
+├── .gitattributes
+├── README.md
+├── requirements.txt
+├── testing_wildfire.py
 └── wildfire_model.py
-└──testing_wildfire.py 
 ```
 
 
