@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 
 ## Make sure the structure is like this
-wildfire_dataset/
+```wildfire_dataset/
 ├── Train/
 │   ├── wildfire/
 │   └── nowildfire/
@@ -39,7 +39,8 @@ wildfire_dataset/
 |   └── nowildfire/
 |
 └── wildfire_model.py
-└──testing_wildfire.py
+└──testing_wildfire.py 
+```
 
 
 ## Train the model
