@@ -39,7 +39,6 @@ pip install -r requirements.txt
 │   └── 📁 Validation
 │       ├── 📁 nowildfire
 │       └── 📁 wildfire
-├── .gitattributes
 ├── README.md
 ├── requirements.txt
 ├── testing_wildfire.py
