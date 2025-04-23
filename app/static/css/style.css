@@ -8,24 +8,26 @@
 }
 
 body {
-  background-color: #00070d;
-  color: #2C2C2C;
+  background-color: #fafdff; /* Default body background */
+  color: #2C2C2C; /* Default text color */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
   line-height: 1.7;
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Dark Mode styles */
 .dark-mode {
-  background-color: #2C2C2C;
-  color: #f1f1f1;
+  background-color: #2C2C2C; /* Dark mode background */
+  color: #f1f1f1; /* Dark mode text color */
 }
 
 .dark-mode header {
-  background-color: inherit;
+  background-color: transparent; /* Allow the background image to show */
   color: inherit;
 }
 
+/* Navbar */
 .navbar {
   padding: 1rem 2rem;
   font-size: 1.2rem;
@@ -36,22 +38,50 @@ body {
   font-weight: 600;
 }
 
+/* Header */
 header {
   text-align: center;
   padding: 100px 0;
-  background-color: #150002;
+  position: relative; /* Ensure proper stacking context */
+  z-index: 1; /* Place header above other elements */
+}
+
+header.custom-header {
+  background-image: url("{{ url_for('static', filename='images/fire.jpg') }}");
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Adjust this based on your preference */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Fallback color if image fails to load */
+}
+
+header.custom-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better text visibility */
+  z-index: 1;
 }
 
 header h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 4.5rem;
   font-weight: 700;
-  color: #d9534f;
+  color: #ffffff; /* White text for better contrast */
+  position: relative;
+  z-index: 2; /* Place text above the overlay */
 }
 
 header p {
   font-size: 1.8rem;
-  color: #6c757d;
+  color: #dc3545; /* Red text color */
+  position: relative;
+  z-index: 2; /* Place text above the overlay */
 }
 
 /* Form Styles */
@@ -68,55 +98,20 @@ form .form-control {
   font-size: 1.1rem;
 }
 
-/* Carousel and Image Styling */
-.carousel-item p {
-  font-size: 1.25rem;
-}
-
-.gallery-img {
-  max-height: 500px;
-  width: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Info Sections */
-.section-title,
-h2, h3 {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  margin: 2rem 0 1rem;
-}
-
-ul {
-  padding-left: 1.5rem;
-  font-size: 1.1rem;
-}
-
-ul li {
-  margin-bottom: 0.5rem;
-}
-
+/* Footer */
 footer {
   margin-top: 4rem;
-  padding: 1rem 0; /* Adjust padding for top and bottom */
+  padding: 1rem 0;
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: #f1f1f1; /* Light mode footer */
   font-size: 1rem;
-  width: 100%; /* Full width */
-  position: relative;
-  left: 0;
-  right: 0;
-  margin-left: 0; /* Remove any left margin */
-  margin-right: 0; /* Remove any right margin */
+  width: 100%;
 }
 
 .dark-mode footer {
-  background-color: #2C2C2C;
+  background-color: #2C2C2C; /* Dark mode footer */
   color: #ddd;
 }
-
 
 /* Learn About Wildfires Section */
 #learn-section {
@@ -144,51 +139,19 @@ footer {
   margin-bottom: 1rem;
 }
 
-/* Section spacing */
-#learn-section .row {
-  margin-bottom: 4rem;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-#learn-section .col-md-6 {
-  padding: 3rem;
-}
-
-/* Push content to far sides */
-#learn-section .row.align-items-center > .col-md-6:first-child {
-  text-align: left;
-  padding-left: 5%;
-}
-
-#learn-section .row.align-items-center > .col-md-6:last-child {
-  text-align: right;
-  padding-right: 5%;
-}
-
-/* Facts section center + more readable */
 #learn-section .text-center ul {
   text-align: left;
   display: inline-block;
   font-size: 1.2rem;
   padding: 0;
   list-style-position: inside;
-  background-color: transparent; /* Make sure no white box */
+  background-color: transparent; /* Transparent background */
   color: inherit; /* Inherit text color for dark mode */
 }
 
 .dark-mode #learn-section .text-center ul {
   background-color: transparent;
-  color: #f1f1f1;
-}
-
-#learn-section .col-md-8 {
-  background-color: transparent;
-}
-
-.dark-mode #learn-section .col-md-8 {
-  background-color: transparent;
-  color: #f1f1f1;
+  color: #f1f1f1; /* Change text color in dark mode */
 }
 
 /* Image Styling */
@@ -198,27 +161,20 @@ footer {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   margin-top: 1rem;
-  margin-left: 10px; 
+  margin-left: 10px;
   margin-right: 10px;
 }
 
-
-
-
-#learn-section .text-center ul {
-  text-align: left;
-  display: inline-block;
-  padding: 0;
-  list-style-position: inside;
-  font-size: 1.2rem;
-}
-
-/* Dark Mode Fixes for Learn Section */
-
-
+/* Dark Mode Fixes */
 #uploadForm {
   background-color: #ffffff;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Specific styling adjustments for dark mode */
+.dark-mode #uploadForm {
+  background-color: #333;
+  color: #f1f1f1;
 }
