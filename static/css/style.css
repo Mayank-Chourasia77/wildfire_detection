@@ -1,0 +1,81 @@
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+  }
+  
+  header, .dark-mode header {
+    background-color: inherit;
+    color: inherit;
+    padding: 3rem 0;
+    text-align: center;
+  }
+  
+  .navbar {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .carousel {
+    margin-top: 2rem;
+  }
+  
+  .carousel-inner {
+    max-width: 100%;
+  }
+  
+  .carousel-item img {
+    display: block;
+    margin: 0 auto;
+    max-height: 400px;
+    width: auto;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin: 2rem 0 1rem;
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  
+  .card {
+    border: none;
+    background-color: #f9f9f9;
+  }
+  
+  .dark-mode .card {
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+  }
+  
+  footer {
+    margin-top: 4rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  .dark-mode footer {
+    background-color: #1f1f1f;
+    color: #ddd;
+  }
+  
+  .gallery-img {
+    max-height: 500px;
+    max-width: 90%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  

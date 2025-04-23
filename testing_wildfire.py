@@ -1,33 +1,82 @@
+from flask import Flask, request, render_template, jsonify
 import tensorflow as tf
 import numpy as np
+from PIL import Image
+import os
 
-# Using the format you requested
-models = tf.keras.models
-preprocessing = tf.keras.preprocessing
+# Initialize Flask app
+app = Flask(__name__)
 
 # Load the trained model
-model = models.load_model("model/wildfire_detection_model.h5")
+model = tf.keras.models.load_model("model/wildfire_detection_model.h5")
 
-# Function to make a prediction on an input image
-def predict_wildfire():
-    # Specify the file path of the image directly in the code (using raw string)
-    image_path = r"C:\Users\Admin\Desktop\WildFire\wildfire_dataset\Test\wildfire\-60.6867,50.26079.jpg"  # Update with the correct image path
-    
+# Function to preprocess and predict wildfire
+def predict_wildfire(image_path):
     # Load and preprocess the image
-    img = preprocessing.image.load_img(image_path, target_size=(256, 256))
-    img_array = preprocessing.image.img_to_array(img)
+    img = tf.keras.preprocessing.image.load_img(image_path, target_size=(256, 256))
+    img_array = tf.keras.preprocessing.image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
-
-    # Normalize the image (same as during model training)
-    img_array = img_array / 255.0
+    img_array = img_array / 255.0  # Normalize the image
 
     # Predict the class (0 = no wildfire, 1 = wildfire)
     prediction = model.predict(img_array)
 
-    if prediction[0] > 0.5:
-        print("This image contains wildfire.")
-    else:
-        print("This image does not contain wildfire.")
+    return "Wildfire detected." if prediction[0] > 0.5 else "No wildfire detected."
 
-# Run the prediction function
-predict_wildfire()
+# Route for the home page
+@app.route("/", methods=["GET"])
+def home():
+    return render_template("index.html")
+
+# Route for the about us page
+@app.route("/about", methods=["GET"])
+def about():
+    return render_template("about.html")
+
+# Route for the contact us page
+@app.route("/contact", methods=["GET"])
+def contact():
+    return render_template("contact.html")
+
+# Route to handle image uploads and predictions
+@app.route("/predict", methods=["POST"])
+def predict():
+    # Check if an image file was uploaded
+    if "file" not in request.files:
+        return jsonify({"error": "No file uploaded"}), 400
+
+    file = request.files["file"]
+
+    # Save the uploaded file temporarily
+    if file.filename == "":
+        return jsonify({"error": "No selected file"}), 400
+
+    upload_folder = "uploads"
+    os.makedirs(upload_folder, exist_ok=True)  # Create the uploads folder if it doesn't exist
+    file_path = os.path.join(upload_folder, file.filename)
+    file.save(file_path)
+
+    # Make prediction
+    img = tf.keras.preprocessing.image.load_img(file_path, target_size=(256, 256))
+    img_array = tf.keras.preprocessing.image.img_to_array(img)
+    img_array = np.expand_dims(img_array, axis=0)
+    img_array = img_array / 255.0
+
+    prediction = model.predict(img_array)
+    confidence = float(prediction[0]) * 100
+
+    result = {
+        "result": "Wildfire detected." if prediction[0] > 0.5 else "No wildfire detected.",
+        "confidence": f"{confidence:.2f}%"
+    }
+
+    # Clean up the uploaded file
+    os.remove(file_path)
+
+    # Return the prediction result
+    return jsonify({"result": result})
+
+    
+# Run the Flask app
+if __name__ == "__main__":
+    app.run(debug=True)

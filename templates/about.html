@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Wildfire Detection</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Wildfire Detection</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+        </ul>
+        <button id="theme-toggle" class="btn btn-outline-light ms-3">Dark Mode</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4">About Us</h1>
+    <p class="lead text-center">
+      Our mission is simple: to harness the power of Artificial Intelligence to protect our planet from the devastating effects of wildfires.
+    </p>
+
+    <div class="row my-5">
+      <div class="col-md-6">
+        <h3>🌍 Who We Are</h3>
+        <p>
+          We are a passionate team of engineers with a common goal — to detect wildfires early using advanced satellite imagery and AI.
+        </p>
+        <p>
+          This project was born out of a deep concern for the increasing frequency of wildfires around the world and the need for smarter, faster detection tools.
+        </p>
+      </div>
+      <div class="col-md-6">    
+        <img src="{{ url_for('static', filename='images/teamwork.png') }}" class="img-fluid rounded shadow" alt="Team working together">
+      </div>
+    </div>
+
+    <div class="row my-5">
+      <div class="col-md-6">
+        <img src="{{ url_for('static', filename='images/vision.png') }}" class="img-fluid rounded shadow" alt="Vision">
+      </div>
+      <div class="col-md-6">
+        <h3>🚀 Our Vision</h3>
+        <p>
+          We're building more than just a wildfire detection tool — we're building a future where smart technology supports disaster prevention.
+        </p>
+        <ul>
+          <li>🌐 Real-time wildfire alerts</li>
+          <li>📡 Integration with local emergency services</li>
+          <li>📊 Data-driven insights and analytics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center my-5">
+      <h4>🔥 What's Next?</h4>
+      <p>We are currently working on features like live updates, automatic alert systems, and mobile integration to make our tool even more effective in real-world scenarios.</p>
+    </div>
+
+    <div class="text-center">
+      <a href="/contact" class="btn btn-danger btn-lg">Get in Touch</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-dark text-white mt-5">
+    &copy; 2025 Wildfire Detection | Built for a safer planet 🌱
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+</body>
+</html>
