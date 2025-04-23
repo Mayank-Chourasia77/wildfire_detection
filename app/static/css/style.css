@@ -1,0 +1,224 @@
+/* General Layout Tweaks */
+.container, .container-fluid {
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #2C2C2C;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #2C2C2C;
+  color: #f1f1f1;
+}
+
+.dark-mode header {
+  background-color: inherit;
+  color: inherit;
+}
+
+.navbar {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+header {
+  text-align: center;
+  padding: 100px 0;
+  background-color: #f8d7da;
+}
+
+header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #d9534f;
+}
+
+header p {
+  font-size: 1.8rem;
+  color: #6c757d;
+}
+
+/* Form Styles */
+form {
+  font-size: 1.2rem;
+}
+
+form .form-label {
+  font-weight: 600;
+}
+
+form .form-control {
+  padding: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* Carousel and Image Styling */
+.carousel-item p {
+  font-size: 1.25rem;
+}
+
+.gallery-img {
+  max-height: 500px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Info Sections */
+.section-title,
+h2, h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  font-size: 1.1rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  margin-top: 4rem;
+  padding: 1rem 0; /* Adjust padding for top and bottom */
+  text-align: center;
+  background-color: #f1f1f1;
+  font-size: 1rem;
+  width: 100%; /* Full width */
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: 0; /* Remove any left margin */
+  margin-right: 0; /* Remove any right margin */
+}
+
+.dark-mode footer {
+  background-color: #2C2C2C;
+  color: #ddd;
+}
+
+
+/* Learn About Wildfires Section */
+#learn-section {
+  width: 100%;
+  padding: 0;
+}
+
+#learn-section h3 {
+  font-size: 2.9rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+#learn-section p,
+#learn-section ul {
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+
+#learn-section ul {
+  padding-left: 2rem;
+}
+
+#learn-section li {
+  margin-bottom: 1rem;
+}
+
+/* Section spacing */
+#learn-section .row {
+  margin-bottom: 4rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#learn-section .col-md-6 {
+  padding: 3rem;
+}
+
+/* Push content to far sides */
+#learn-section .row.align-items-center > .col-md-6:first-child {
+  text-align: left;
+  padding-left: 5%;
+}
+
+#learn-section .row.align-items-center > .col-md-6:last-child {
+  text-align: right;
+  padding-right: 5%;
+}
+
+/* Facts section center + more readable */
+#learn-section .text-center ul {
+  text-align: left;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0;
+  list-style-position: inside;
+  background-color: transparent; /* Make sure no white box */
+  color: inherit; /* Inherit text color for dark mode */
+}
+
+.dark-mode #learn-section .text-center ul {
+  background-color: transparent;
+  color: #f1f1f1;
+}
+
+#learn-section .col-md-8 {
+  background-color: transparent;
+}
+
+.dark-mode #learn-section .col-md-8 {
+  background-color: transparent;
+  color: #f1f1f1;
+}
+
+/* Image Styling */
+#learn-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+  margin-left: 10px; 
+  margin-right: 10px;
+}
+
+
+
+
+#learn-section .text-center ul {
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  list-style-position: inside;
+  font-size: 1.2rem;
+}
+
+/* Dark Mode Fixes for Learn Section */
+
+
+#uploadForm {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
