@@ -1,6 +1,6 @@
 body {
     background-color: #f8f9fa;
-    color: #212529;
+    color: #2C2C2C;
     transition: background-color 0.3s, color 0.3s;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
@@ -70,7 +70,7 @@ body {
     background-color: #1f1f1f;
     color: #ddd;
   }
-  
+
   .gallery-img {
     max-height: 500px;
     max-width: 90%;
