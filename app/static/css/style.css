@@ -47,7 +47,6 @@ header {
 }
 
 header.custom-header {
-  background-image: url("{{ url_for('static', filename='images/fire.jpg') }}");
   background-size: cover;
   background-position: center;
   height: 400px; /* Adjust this based on your preference */
@@ -116,7 +115,8 @@ footer {
 /* Learn About Wildfires Section */
 #learn-section {
   width: 100%;
-  padding: 0;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 #learn-section h3 {
@@ -163,6 +163,7 @@ footer {
   margin-top: 1rem;
   margin-left: 10px;
   margin-right: 10px;
+  
 }
 
 /* Dark Mode Fixes */
