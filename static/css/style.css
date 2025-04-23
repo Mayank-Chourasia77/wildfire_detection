@@ -6,7 +6,7 @@ body {
   }
   
   .dark-mode {
-    background-color: #121212;
+    background-color:#2C2C2C;
     color: #f1f1f1;
   }
   
@@ -55,7 +55,7 @@ body {
   }
   
   .dark-mode .card {
-    background-color: #1f1f1f;
+    background-color:#2C2C2C;
     color: #f1f1f1;
   }
   
@@ -67,7 +67,7 @@ body {
   }
   
   .dark-mode footer {
-    background-color: #1f1f1f;
+    background-color: #2C2C2C;
     color: #ddd;
   }
 
