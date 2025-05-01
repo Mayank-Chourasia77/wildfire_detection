@@ -1,76 +1,53 @@
-# 🌲🔥 WildFireAnalyzer – Wildfire Detection with Deep Learning
+
+# Wildfire Detection System 🌲🔥
 
 **WildFireAnalyzer** is an AI-powered image classification tool designed to detect wildfires from satellite or aerial images using **Convolutional Neural Networks (CNNs)** built with **TensorFlow**.
 
----
+## 🚀 Demo
+https://github.com/user-attachments/assets/e3cf0e59-d9ca-44fa-abb3-ea35e2fe5e28
 
-## 🚀 How to Use
+## Project Overview
+A real-time wildfire monitoring system that:
+- Detects active fires using NASA FIRMS satellite data
+- Provides weather conditions for selected locations
+- Displays satellite imagery of affected areas
+- Includes machine learning for image analysis
 
-### 1. Clone the Repository
+## 🚀 Quick Start
 
-```git clone https://github.com/yourusername/wildfire_detection.git```
-```cd wildfire_detection```
+```bash
+#1. (Optional) Set Up a Virtual Environment
+python -m venv venv
 
----
+  #On Windows
+   venv\Scripts\activate
 
-### 2. (Optional) Set Up a Virtual Environment
-```python -m venv venv```
+  #On macOS/Linux
+   source venv/bin/activate
 
-# On Windows
-```venv\Scripts\activate```
-# On macOS/Linux
-```source venv/bin/activate```
 
----
+# 2. Install dependencies
+pip install -r requirements.txt
 
-### 3. Install Dependencies
-```pip install -r requirements.txt```
+# 3. Run the application
+python app.py
 
----
-
-### 📁 Make Sure Your Project Structure Looks Like This:
+# 4. Access in browser
+# OR start http://localhost:5000
 ```
-wildfire_detection/
-├── wildfire_dataset/
-│   ├── Test/
-│   │   ├── nowildfire/
-│   │   └── wildfire/
-│   ├── Train/
-│   │   ├── nowildfire/
-│   │   └── wildfire/
-│   └── Validation/
-│       ├── nowildfire/
-│       └── wildfire/
-├── model/
-│   └── wildfire_detection_model.h5
-├── README.md
-├── requirements.txt
-├── testing_wildfire.py
-└── wildfire_model.py
+## 🔧 Key Features
+- Real-time Fire Data from NASA FIRMS API
+- Interactive Map with Leaflet.js
+- Weather Integration via OpenWeatherMap
+- Satellite Imagery from NASA Earth API
+- Responsive Design works on desktop/mobile
+
+## 🌐 API Configuration
+Edit config.py with your keys:
 ```
----
+# config.py
 
-### 4. Train the Model ( NOT NEEDED )
-
-```python wildfire_model.py```
-
----
-
-### 5. Test with an Image
-
-Edit the `image_path` inside `testing_wildfire.py` and run:
-
-```python testing_wildfire.py```
-
----
-
-## 📊 Dataset Used
-The wildfire image dataset used in this project was sourced from Kaggle:
-
-**Forest Fire Detection Using DL**  
-🔗 [Kaggle Dataset Source](https://www.kaggle.com/code/codeml707/forest-fire-detection-using-dl/input)
-
-The dataset is organized into `wildfire` and `nowildfire` classes under `Train`, `Validation`, and `Test` folders.
-
-
-
+class Config:
+ NASA_API_KEY = "your_nasa_key"          # From api.nasa.gov
+ OPENWEATHER_API_KEY = "your_owm_key"    # From openweathermap.org
+```
