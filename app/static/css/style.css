@@ -14,8 +14,14 @@ body {
   font-size: 1.1rem;
   line-height: 1.7;
   transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+.wrapper {
+  flex: 1;
+}
 /* Dark Mode styles */
 .dark-mode {
   background-color: #2C2C2C; /* Dark mode background */
@@ -41,7 +47,7 @@ body {
 /* Header */
 header {
   text-align: center;
-  padding: 100px 0;
+  padding: 100px 0px 50px 0px;
   position: relative; /* Ensure proper stacking context */
   z-index: 1; /* Place header above other elements */
 }
@@ -178,4 +184,46 @@ footer {
 .dark-mode #uploadForm {
   background-color: #333;
   color: #f1f1f1;
+}
+
+
+/* Clean heading */
+.realtime-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #dc3545;
+  margin-bottom: 20px;
+}
+
+/* Glowing button */
+.btn-glow {
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #dc3545, 0 0 20px #dc3545;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 15px #dc3545, 0 0 30px #dc3545;
+  transform: scale(1.05);
+}
+
+/* Dark mode compatibility */
+body.dark-mode .realtime-heading {
+  color: #dc3545;
+}
+
+body.dark-mode .btn-glow {
+  background-color: #dc3545;
+  box-shadow: 0 0 10px #dc3545, 0 0 20px #dc3545;
+}
+
+body.dark-mode .btn-glow:hover {
+  box-shadow: 0 0 15px #dc3545, 0 0 30px #dc3545;
 }

@@ -3,8 +3,13 @@ import tensorflow as tf
 
 app = Flask(__name__)
 
-# Load model once during app startup
-model_path = "model/wildfire_detection_model.h5"
-model = tf.keras.models.load_model(model_path)
+# Global model variable
+model = None
 
-from app import routes  # Import routes after initializing the app
+try:
+    model = tf.keras.models.load_model("model/wildfire_detection_model.h5")
+    print("✅ Model loaded successfully!")
+except Exception as e:
+    print(f"❌ Model loading failed: {str(e)}")
+
+from app import routes
