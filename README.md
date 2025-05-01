@@ -4,7 +4,9 @@
 **WildFireAnalyzer** is an AI-powered image classification tool designed to detect wildfires from satellite or aerial images using **Convolutional Neural Networks (CNNs)** built with **TensorFlow**.
 
 ## 🚀 Demo
-https://github.com/user-attachments/assets/e3cf0e59-d9ca-44fa-abb3-ea35e2fe5e28
+
+https://github.com/user-attachments/assets/82ba9dbd-3971-4a2e-8d75-e894aa96b97e
+
 
 ## Project Overview
 A real-time wildfire monitoring system that:
